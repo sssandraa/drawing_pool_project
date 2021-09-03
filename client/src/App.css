@@ -3,20 +3,36 @@
   color: rgb(31, 53, 71);
 }
 
-img {
-max-width: 80%;
-height: auto;
+.homeimage{
+  filter: blur(3px);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: rgb(105, 186, 206);
+.dream-card img {
+max-width: 20%;
+max-height: 20%;
+height: auto;
 }
+.dream-card p {
+  margin-left: 30%;
+  margin-right: 30%;
+  text-align: left;
+}
+.dream-card{
+  margin-top: 10%;
+  margin-bottom: 10%;
+}
+form{
+  padding-top: 10px;
+}
+.dream-form{
+ display:flex;
+ flex-direction: column;
+
+ align-items: center;
+}
+.dream-form input{
+  margin-bottom: 0.5rem;
+}
+
 
 

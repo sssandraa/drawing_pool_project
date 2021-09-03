@@ -6,6 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+User.destroy_all
+
 bothandthen = User.create(name: "both.and.then")
 banana_leaf = User.create(name:"banana_leaf")
 chasingthebell = User.create(name:"chasingthebell")
@@ -21,3 +23,5 @@ dream3 = Dream.create(user_id:2, image:"https://i.pinimg.com/150x150/0c/1a/5e/0c
 Note.create(user_id:2, dream_id:2, text:"sounds pretty intense, I wonder if it was trying to warn you about something.")
 
 Note.create(user_id:1, dream_id:1, text:"soooo strange...texting in a dream. i don't think i've ever done that lol")
+
+puts "seeded"
