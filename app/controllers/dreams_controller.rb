@@ -23,7 +23,7 @@ class DreamsController < ApplicationController
     private 
 
     def dream_params
-        params.permit(:image, :description, :date_time)
+        params.permit(:image, :description, :date_time, :user_id)
     end
     
 end

@@ -6,6 +6,7 @@ function DreamForm({ addDream }){
     const [image, setImage] = useState('')
     const [date_time, setDate_time] = useState('')
     const [description, setDescription] = useState('')
+   
     
 
     const handleSubmit = (event) => {
@@ -21,7 +22,8 @@ function DreamForm({ addDream }){
             body: JSON.stringify({
                 image: image,
                 date_time: date_time,
-                description: description
+                description: description,
+                user_id: 1
               }),
          
             }
