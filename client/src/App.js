@@ -1,12 +1,13 @@
 import './App.css';
 import React, { useEffect, useState } from 'react';
-import { useHistory } from "react-router";
 import { Switch, Route} from "react-router-dom";
+
 
 import LandingPage from './components/LandingPage';
 import DreamForm from './components/DreamForm';
 import DreamsContainer from './components/DreamsContainer';
-import Dream from './components/Dream';
+import YourDreamsContainer from './components/YourDreamsContainer';
+
 
 
 
@@ -21,15 +22,40 @@ function App() {
     .then(apiDreams => setDreams(apiDreams))
   }, []);
 
+  function handleDelete(dreamid){
 
+    console.log(dreamid)
+  fetch(`http://localhost:3000/dreams/${dreamid}`, {
+    method: "DELETE",
+    credentials: "include",
+  }).then((r)=>{
+    if(r.ok){
+      let newDreams = dreams.filter(dream => dream.id !== dreamid)
+      setDreams(newDreams)
+    }
+  })
+  }
+
+  function addDream(dreamInput){
+    const updatedDreamList = [...dreams, dreamInput]
+    setDreams(updatedDreamList)
+    console.log(updatedDreamList)
+  }
 
   return (
     
     <div className="App">
-    <Route exact path="/" component={LandingPage}/>
-    <Route path="/new-dream" component={DreamForm}/>
-    <Route path="/dreams" component={DreamsContainer}/>
-    <Switch>  
+    <Switch> 
+      <Route path="/new-dream">
+      <DreamForm addDream={addDream}/>
+      </Route>
+      <Route path="/dreams">
+      <DreamsContainer dreams={dreams} handleDelete={handleDelete}/>
+      </Route> 
+      <Route path="your-dreams">
+      <YourDreamsContainer dreams={dreams}/>
+      </Route>
+      <Route path="/" component={LandingPage}/>
     </Switch>
     </div>
   );

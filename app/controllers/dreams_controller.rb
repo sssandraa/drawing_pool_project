@@ -5,6 +5,11 @@ class DreamsController < ApplicationController
         render json: dreams
     end 
 
+    def show 
+        dream = Dream.find_by(dream_params[:id])
+        render json: dream
+      end 
+
     def create
         dream = Dream.create(dream_params) 
         render json: dream

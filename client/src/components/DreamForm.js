@@ -1,14 +1,43 @@
-
 import { useState } from 'react'
+import Header from './Header'
 
-function DreamForm(){
+function DreamForm({ addDream }){
 
     const [image, setImage] = useState('')
     const [date_time, setDate_time] = useState('')
     const [description, setDescription] = useState('')
+    
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+
+      const options = {
+            credentials: "include",
+            method: "POST",
+            headers:{
+                Accept: 'application/json',
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                image: image,
+                date_time: date_time,
+                description: description
+              }),
+         
+            }
+            fetch('http://localhost:3000/dreams', options)
+            .then(response => response.json())
+            .then((dreamInput) => addDream(dreamInput)) 
+
+            setImage('')
+            setDate_time('')
+            setDescription('')
+          }
 
     return(
-        <form className="dream-form">
+        <>
+        <Header/>
+        <form className="dream-form" onSubmit={handleSubmit}>
         <label htmlFor="image">image: </label>
         <input 
         type="text" 
@@ -34,6 +63,7 @@ function DreamForm(){
         />
         <input type="submit" value="add dream"/>
         </form>
+        </>
     )
 }
 

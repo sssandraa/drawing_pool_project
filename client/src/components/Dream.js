@@ -1,12 +1,48 @@
-function Dream ({ dream }){
+import React, { useState } from 'react';
+
+function Dream ({ dream, handleDelete }){
+
+    const [notes, setNotes] = useState([])
+    const [text, setText] = useState("")
+    const [buttonClick, setButtonClick] = useState(false)
+
+    function handleSubmit(e){
+        e.preventDefault();
+        setText("")
+        fetch("http://localhost:3000/notes", {
+            credentials: "include",
+            method: "POST",
+            headers:{
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              text
+            }),
+        }).then(response => response.json())
+         .then(apiNotes => console.log(apiNotes))
+        }
+     
+
+        // notes.map(note => console.log(note))
+       
 
 return(
-         <div key={dream.id} className="dream-card">
-                    <img src={dream.image} alt="dream image"/>
+         <div className="dream-card">
+                    <img src={dream.image} alt="dream"/>
                     <h4>{dream.date_time}</h4>
-                    <p>entry by, {dream.user.name}</p>
+                    {/* <p>entry by, {dream.user.name}</p> */}
                     <p>{dream.description}</p>
-                    <button> add note</button>
+                    <button onClick={() => handleDelete(dream.id)}>delete</button>
+                    {buttonClick ? 
+                        <form onSubmit={handleSubmit}>
+                        <input 
+                        type="text" 
+                        value={text} 
+                        onChange={e => setText(e.target.value)}>
+                        </input>
+                        <button type="submit">submit</button>
+                        </form> :
+                        <button onClick={() => setButtonClick(true)}> add note </button>}
          </div>
 )
 }

@@ -2,7 +2,15 @@
   text-align: center;
   color: rgb(31, 53, 71);
 }
-
+.header{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.header a{
+  margin-right: 1rem;
+  text-decoration: none;
+}
 .homeimage{
   filter: blur(3px);
 }
