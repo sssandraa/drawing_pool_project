@@ -39,7 +39,7 @@ function LandingPage ({ setUser }){
       {/* <p>an ongoing archive and conversation of sleep dreams</p> */}
       <br></br>
       <br></br>
-      <img className="homeimage" src="https://web.archive.org/web/20090821174141/http://geocities.com/SoHo/Bistro/3064/aniwater.gif" alt="gif of a anime pool"/>
+      <img className="homeimage" src="https://web.archive.org/web/20090821174141/http://geocities.com/SoHo/Bistro/3064/aniwater.gif" alt="waterfall gif"/>
       <br>
       </br>
       <br>

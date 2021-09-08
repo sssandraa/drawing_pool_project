@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 
+
 function Dream ({ dream, handleDelete }){
 
    
@@ -17,7 +18,9 @@ function Dream ({ dream, handleDelete }){
               "Content-Type": "application/json",
             },
             body: JSON.stringify({
-              text
+              text: text,
+              user_id: 1,
+              dream_id: 1
             }),
         }).then(response => response.json())
          .then(apiNotes => console.log(apiNotes))
@@ -41,7 +44,8 @@ return(
                         onChange={e => setText(e.target.value)}>
                         </input>
                         <button type="submit">submit</button>
-                        </form> :
+                        </form> 
+                        :
                         <button onClick={() => setButtonClick(true)}> add note </button>}
          </div>
 )

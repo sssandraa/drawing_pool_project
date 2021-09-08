@@ -7,6 +7,7 @@ import LandingPage from './components/LandingPage';
 import DreamForm from './components/DreamForm';
 import DreamsContainer from './components/DreamsContainer';
 import YourDreamsContainer from './components/YourDreamsContainer';
+import NotesContainer from './components/NotesContainer';
 
 
 
@@ -15,6 +16,7 @@ function App() {
 
   const [dreams, setDreams] = useState([])
   const [user, setUser] = useState('')
+  const [notes, setNotes] = useState([])
 
 
 
@@ -22,6 +24,13 @@ function App() {
     fetch('http://localhost:3000/dreams')
     .then(response => response.json())
     .then(apiDreams => setDreams(apiDreams))
+  }, []);
+
+
+  useEffect(() => {
+    fetch('http://localhost:3000/notes')
+    .then(response => response.json())
+    .then(apiNotes => setNotes(apiNotes))
   }, []);
 
   function handleDelete(dreamid){
@@ -38,11 +47,7 @@ function App() {
   })
   }
 
-  // function addNotes(){
-  //   fetch('http://localhost:3000/dreams')
-  //   .then(response => response.json())
-  //   .then(apiNotes => setNotes(apiNotes))
-  // }
+ 
 
   function addDream(dreamInput){
     const updatedDreamList = [...dreams, dreamInput]
@@ -59,13 +64,14 @@ function App() {
       <DreamForm addDream={addDream} user={user}/>
       </Route>
       <Route path="/dreams">
-      <DreamsContainer dreams={dreams} handleDelete={handleDelete}/>
+      <DreamsContainer dreams={dreams} user={user} handleDelete={handleDelete}/>
       </Route> 
-      <Route path="your-dreams">
-      <YourDreamsContainer dreams={dreams}/>
+      <Route path="/your-dreams">
+      <YourDreamsContainer user={user} dreams={dreams}/>
       </Route>
       <Route path="/" render={() => <LandingPage setUser={setUser}/>}/>
     </Switch>
+    <NotesContainer notes={notes} user={user}/>
     </div>
   );
 }
