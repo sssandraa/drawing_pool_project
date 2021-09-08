@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import Header from './Header'
 
-function DreamForm({ addDream }){
+function DreamForm({ addDream, user }){
 
     const [image, setImage] = useState('')
     const [date_time, setDate_time] = useState('')
@@ -23,7 +23,7 @@ function DreamForm({ addDream }){
                 image: image,
                 date_time: date_time,
                 description: description,
-                user_id: 1
+                user_id: user.id
               }),
          
             }

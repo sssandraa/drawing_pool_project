@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useHistory } from "react-router";
 
-function LandingPage (){
+function LandingPage ({ setUser }){
 
     const [name, setName] = useState("")
     const [buttonClick, setButtonClick] = useState(false)
@@ -23,6 +23,7 @@ function LandingPage (){
       }),
     }).then((r) => {
       if (r.ok) {
+        r.json().then((newUser) => setUser(newUser))
         history.push("/dreams");
       } else {
         r.json().then((err) => setErrors([...errors, err.error]));
@@ -38,7 +39,7 @@ function LandingPage (){
       {/* <p>an ongoing archive and conversation of sleep dreams</p> */}
       <br></br>
       <br></br>
-      <img className="homeimage" src="https://data.whicdn.com/images/266864759/original.gif" alt="gif of a anime pool"/>
+      <img className="homeimage" src="https://web.archive.org/web/20090821174141/http://geocities.com/SoHo/Bistro/3064/aniwater.gif" alt="gif of a anime pool"/>
       <br>
       </br>
       <br>

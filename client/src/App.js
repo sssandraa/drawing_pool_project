@@ -14,6 +14,8 @@ import YourDreamsContainer from './components/YourDreamsContainer';
 function App() {
 
   const [dreams, setDreams] = useState([])
+  const [user, setUser] = useState('')
+
 
 
   useEffect(() => {
@@ -36,18 +38,25 @@ function App() {
   })
   }
 
+  // function addNotes(){
+  //   fetch('http://localhost:3000/dreams')
+  //   .then(response => response.json())
+  //   .then(apiNotes => setNotes(apiNotes))
+  // }
+
   function addDream(dreamInput){
     const updatedDreamList = [...dreams, dreamInput]
     setDreams(updatedDreamList)
     console.log(updatedDreamList)
   }
 
+  console.log("login??", user)
   return (
     
     <div className="App">
     <Switch> 
       <Route path="/new-dream">
-      <DreamForm addDream={addDream}/>
+      <DreamForm addDream={addDream} user={user}/>
       </Route>
       <Route path="/dreams">
       <DreamsContainer dreams={dreams} handleDelete={handleDelete}/>
@@ -55,7 +64,7 @@ function App() {
       <Route path="your-dreams">
       <YourDreamsContainer dreams={dreams}/>
       </Route>
-      <Route path="/" component={LandingPage}/>
+      <Route path="/" render={() => <LandingPage setUser={setUser}/>}/>
     </Switch>
     </div>
   );

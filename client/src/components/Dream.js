@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 
+
 function Dream ({ dream, handleDelete }){
 
-    const [notes, setNotes] = useState([])
+   
     const [text, setText] = useState("")
     const [buttonClick, setButtonClick] = useState(false)
 
@@ -23,7 +24,7 @@ function Dream ({ dream, handleDelete }){
         }
      
 
-        // notes.map(note => console.log(note))
+    // const renderNotes = () => notes.map(note => <Notes note={note}/>)
        
 
 return(

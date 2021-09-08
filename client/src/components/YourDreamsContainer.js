@@ -3,7 +3,7 @@ import Header from "./Header";
 
 function YourDreamsContainer({ dreams }){
     const renderDreams = () => {
-        return dreams.map(dream => <YourDreams dream={dream}/>)
+        return dreams.map(dream => <YourDreams key={dream.id} dream={dream}/>)
      }
  
  return(

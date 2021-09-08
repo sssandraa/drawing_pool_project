@@ -2,6 +2,7 @@
   text-align: center;
   color: rgb(31, 53, 71);
 }
+
 .header{
   display: flex;
   justify-content: space-between;
