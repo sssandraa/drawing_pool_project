@@ -17,3 +17,4 @@ function NotesContainer({ notes, user }){
 }
 
 export default NotesContainer;
+

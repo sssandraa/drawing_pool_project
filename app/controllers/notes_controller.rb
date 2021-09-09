@@ -13,7 +13,7 @@ class NotesController < ApplicationController
     private 
 
     def note_params
-        params.permit(:text)
+        params.permit(:text, :user_id, :dream_id)
     end 
 
 end

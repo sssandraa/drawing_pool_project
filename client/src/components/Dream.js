@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 
 
-
-function Dream ({ dream, handleDelete }){
+function Dream ({ dream, handleDelete, user}){
 
    
     const [text, setText] = useState("")
     const [buttonClick, setButtonClick] = useState(false)
+    const [note, setNote] = useState({})
 
     function handleSubmit(e){
         e.preventDefault();
@@ -19,22 +19,24 @@ function Dream ({ dream, handleDelete }){
             },
             body: JSON.stringify({
               text: text,
-              user_id: 1,
-              dream_id: 1
+              user_id: user.id,
+              dream_id: dream.id
             }),
         }).then(response => response.json())
-         .then(apiNotes => console.log(apiNotes))
+         .then(newDreamNotes => {console.log(newDreamNotes)
+        }, [])
         }
      
 
-    // const renderNotes = () => notes.map(note => <Notes note={note}/>)
-       
+console.log(dream.notes)
+console.log("hiiiiiiiii")
 
 return(
          <div className="dream-card">
                     <img src={dream.image} alt="dream"/>
                     <h4>{dream.date_time}</h4>
-                    <p>{dream.description}</p>
+                    {/* <p>{dream.description}</p> */}
+                    {dream.notes.map((note) => <p>{note}</p>)}
                     <button onClick={() => handleDelete(dream.id)}>delete</button>
                     {buttonClick ? 
                         <form onSubmit={handleSubmit}>

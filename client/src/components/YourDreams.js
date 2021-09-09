@@ -2,10 +2,10 @@
 
 function YourDreams({ dream, user }){
 
-    if (user.id === dream.user.id){
-        console.log(user.id)
+return(
+    <>
 
-    return(
+     {(user.id === dream.user.id) ?
         <div className="dream-card">
         <img src={dream.image} alt="dream"/>
         <h4>{dream.date_time}</h4>
@@ -13,13 +13,13 @@ function YourDreams({ dream, user }){
         <p>{dream.description}</p>
         <button> add note</button>
         </div>
-         )
-
-        } else{
-            return(
-                <p>no dreams found :(</p>
-            )
-        }
+        :
+        <h3></h3>
+     }
+    </>
+    )
+   
 }
 
 export default YourDreams;
+
