@@ -1,11 +1,10 @@
 import Dream from './Dream';
 import Header from './Header';
 
-function DreamsContainer({ dreams, handleDelete, user, setDreams }){
+function DreamsContainer({ dreams, handleDelete, user, setDreams}){
 
     const renderDreams = () => {
-       return dreams.map(dream => <Dream key={dream.id} dream={dream} handleDelete={handleDelete} user={user}
-        setDreams={setDreams}/>)
+       return dreams.map(dream => <Dream key={dream.id} dream={dream} handleDelete={handleDelete} user={user} setDreams={setDreams}/>)
     }
 
 

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Note from './Note';
 
 
 function Dream ({ dream, handleDelete, user, setDreams}){
@@ -23,14 +24,21 @@ function Dream ({ dream, handleDelete, user, setDreams}){
               dream_id: dream.id
             }),
         }).then(response => response.json())
-         .then(newDreamNotes => {
-           
-          setDreams(prevDream => {
-                const newDream = {...prevDream, notes: [prevDream.notes, newDreamNotes]}
-                return newDream
-          }
-            )}, 
-         [])
+         .then(newNote => {
+            setDreams((prevDreams) => {
+              const newDreams = [...prevDreams]
+              const newDreamNoteIndex = newDreams.findIndex(x => x.id === newNote.dream.id)
+              console.log(newDreamNoteIndex)
+
+              newDreams[newDreamNoteIndex].notes.push(newNote)
+              // newDreamNote.notes.push(newNote)
+              
+              console.log("newdreams", newDreams)
+              console.log("newnote!", newNote)
+            //find index in array of dream and add to array
+              return newDreams
+            })
+          })
         }
      
     
@@ -41,8 +49,8 @@ return(
                     <img src={dream.image} alt="dream"/>
                     <h4>{dream.date_time}</h4>
                     <p>{dream.description}</p>
-                    <p>{note.text}</p>
-                    {/* {dream.notes.map((note) => <p>{note}</p>)} */}
+                    {/* <p>{note.text}</p> */}
+                    {dream.notes.map((note) => <Note note={note} />)}
                     <button onClick={() => handleDelete(dream.id)}>delete</button>
                     {buttonClick ? 
                         <form onSubmit={handleSubmit}>

@@ -2,8 +2,14 @@
   text-align: center;
   color: rgb(31, 53, 71);
 }
+*{
+  background-color: gainsboro;
+}
 .dreams-container{
   outline: darkgreen;
+}
+.notes-section{
+  font-style: italic;
 }
 .header{
   display: flex;
