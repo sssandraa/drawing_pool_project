@@ -56,7 +56,7 @@ function App() {
        <DreamForm addDream={addDream} user={user}/>
       </Route>
       <Route path="/dreams">
-       <DreamsContainer dreams={dreams} user={user} handleDelete={handleDelete} />
+       <DreamsContainer dreams={dreams} user={user} handleDelete={handleDelete} setDreams={setDreams} />
       </Route>
       <Route path="/your-dreams">
        <YourDreamsContainer user={user} dreams={dreams}/>
