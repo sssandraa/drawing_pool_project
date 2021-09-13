@@ -36,7 +36,7 @@ function LandingPage ({ setUser }){
       <br></br>
       <br></br>
       <h1> The Dream Pool </h1>
-      {/* <p>an ongoing archive and conversation of sleep dreams</p> */}
+      <p>an ongoing archive and conversation of sleep dreams</p>
       <br></br>
       <br></br>
       <img className="homeimage" src="https://web.archive.org/web/20090821174141/http://geocities.com/SoHo/Bistro/3064/aniwater.gif" alt="waterfall gif"/>
