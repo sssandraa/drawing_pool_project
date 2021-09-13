@@ -11,6 +11,7 @@ function DreamsContainer({ dreams, handleDelete, user, setDreams}){
 return(
     <>
     <Header/>
+    <img className="baloon" src="https://i.gifer.com/ZELY.gif"/>
     <section className="dreams-container">  
     {renderDreams()}   
     </section>

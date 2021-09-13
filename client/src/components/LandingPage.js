@@ -35,11 +35,11 @@ function LandingPage ({ setUser }){
     <div className="landingpage">
       <br></br>
       <br></br>
-      <h1> The Dream Pool </h1>
+      <h1 className="title"> The Dream Pool </h1>
       {/* <p>an ongoing archive and conversation of sleep dreams</p> */}
       <br></br>
       <br></br>
-      <img className="homeimage" src="https://web.archive.org/web/20090821174141/http://geocities.com/SoHo/Bistro/3064/aniwater.gif" alt="waterfall gif"/>
+      <img className="homeimage" src="https://media2.giphy.com/media/dl2c1a1xHklcJzCmCP/200w.gif?cid=ecf05e4727ntbpj4k9ew4xmqekg5te0z8fcg0pnf4hs8eo6k&rid=200w.gif&ct=s" alt="waterfall gif"/>
       <br>
       </br>
       <br>

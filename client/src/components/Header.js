@@ -8,12 +8,14 @@ function Header(){
     return(
         <header className="header" >
          <nav>
+             {/* <img src="https://pngimg.com/uploads/drops/drops_PNG13515.png" /> */}
+             <br></br>
              <a>The Dream Pool</a>
              <a>{date}</a>
              <a>|</a>
-             <Link to="/your-dreams">Your Dreams</Link>
-             <Link to="/new-dream">Add Dream</Link>
-             <Link to="/dreams">★</Link>
+             <Link to="/your-dreams">⚀</Link>
+             <Link to="/new-dream">✼</Link>
+             <Link to="/dreams">♨</Link>
              </nav> 
         </header>
     )

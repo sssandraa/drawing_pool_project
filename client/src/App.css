@@ -1,32 +1,70 @@
 .App {
   text-align: center;
-  color: rgb(31, 53, 71);
+  color: rgb(112, 188, 241);
+  margin: 0 auto 0 auto;
+  font-family: Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  /* background-image: url(heart.png); */
+  background-repeat: no-repeat;
+
 }
 *{
-  background-color: gainsboro;
+  /* background-image: url(heart.png);
+  background-repeat: no-repeat; */
+  /* filter:invert(20); */
+ 
 }
+
 .dreams-container{
   outline: darkgreen;
 }
 .notes-section{
   font-style: italic;
+  font-weight: 200;
+}
+button{
+  background-color: rgb(220, 225, 228);
+  filter: blur(1px);
+  border-radius: 4px;
 }
 .header{
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
+    display: grid;
+    grid-template-columns: fr 2fr 150px 150px;
+    grid-gap: 1px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #a54343;
+}
+.baloon{
+    animation-duration: 20s;
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-fill-mode: none;
+    animation-play-state: running;
+    animation-name: fly;
+  position: fixed;
+  top: 50%;
+  width: 100px;
 }
 .header a{
   margin-right: 1rem;
   text-decoration: none;
+  font-size: 20px;
 }
-
+/* header .header{
+  width: 100%;
+} */
+.title{
+  filter:invert(40);
+}
 .your-dream-header{
   filter: blur(.5px);
 }
 
 .homeimage{
-  filter: blur(3px);
+  margin-top: 7%;
+  filter: blur(4px);
 }
 
 .dream-card img {
@@ -40,13 +78,18 @@ height: auto;
   text-align: left;
 }
 .dream-card{
-  margin-top: 10%;
-  margin-bottom: 10%;
+  display: grid;
+  border-style: solid;
+  margin-right: 30%;
+  margin-left: 30%;
+  margin-top: 30%;
+  margin-bottom: 30%;
 }
 form{
   padding-top: 10px;
 }
 .dream-form{
+margin-top: 20%;
  display:flex;
  flex-direction: column;
 
