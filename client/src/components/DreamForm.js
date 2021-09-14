@@ -40,7 +40,7 @@ function DreamForm({ addDream, user }){
         <>
         <Header/>
         <form className="dream-form" onSubmit={handleSubmit}>
-        <label htmlFor="image">image: </label>
+        <label htmlFor="image">image </label>
         <input 
         type="text" 
         id="image"
@@ -48,7 +48,7 @@ function DreamForm({ addDream, user }){
         onChange={event => setImage(event.target.value)}
         />
 
-        <label htmlFor="date_time"> date: </label>
+        <label htmlFor="date_time"> date </label>
         <input 
         type="text" 
         id="date_time"
@@ -56,7 +56,7 @@ function DreamForm({ addDream, user }){
         onChange={event => setDate_time(event.target.value)}
         /> 
 
-        <label htmlFor="description"> description: </label>
+        <label htmlFor="description"> description </label>
         <textarea 
         type="text" 
         id="description"

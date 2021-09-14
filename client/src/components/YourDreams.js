@@ -1,6 +1,6 @@
 
 
-function YourDreams({ dream, user }){
+function YourDreams({ dream, user, handleDelete }){
 
 return(
     <>
@@ -11,7 +11,7 @@ return(
         <h4>{dream.date_time}</h4>
         <p>entry by, {dream.user.name}</p>
         <p>{dream.description}</p>
-        <button> add note</button>
+        <button onClick={() => handleDelete(dream.id)}>delete</button>
         </div>
         :
         <h3></h3>

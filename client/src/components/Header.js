@@ -11,9 +11,9 @@ function Header(){
              <a>The Dream Pool</a>
              <a>{date}</a>
              <a>|</a>
-             <Link to="/your-dreams">Your Dreams</Link>
-             <Link to="/new-dream">Add Dream</Link>
-             <Link to="/dreams">★</Link>
+             <Link to="/your-dreams">❈</Link>
+             <Link to="/new-dream">✺</Link>
+             <Link to="/dreams">➺</Link>
              </nav> 
         </header>
     )

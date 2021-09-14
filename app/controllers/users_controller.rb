@@ -15,10 +15,29 @@ class UsersController < ApplicationController
         render json: user 
     end 
 
+    def login
+        user = User.find_by(name:user_params[:name])
+        if(user && user.authenticate(user_params[:password]))
+            session[:user_id] = user.id
+            render json: {user: user}
+        else 
+            render json: {error: ["name or password not found"]}, status: :unauthorized
+        end    
+    end 
+
+    def profile
+        user = User.find_by(id: session[:user_id])
+        if user 
+            render json: user 
+        else 
+            render json: {error: ["login please"]}
+        end
+    end
+
     private 
 
     def user_params
-        params.permit(:name)
+        params.permit(:name, :password)
     end 
 
 end

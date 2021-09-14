@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Note from './Note';
 
 
-function Dream ({ dream, handleDelete, user, setDreams}){
+function Dream ({ dream, user, setDreams, handleDelete}){
 
    
     const [text, setText] = useState("")
@@ -42,7 +42,7 @@ function Dream ({ dream, handleDelete, user, setDreams}){
         }
      
     
-console.log(note)
+// console.log(note)
 
 return(
          <div className="dream-card">
