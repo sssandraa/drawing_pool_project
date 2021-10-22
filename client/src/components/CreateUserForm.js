@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { useHistory } from "react-router";
+import { Link } from 'react-router-dom'
 
 function CreateUserForm({ setUser }){
 
@@ -34,9 +35,10 @@ function CreateUserForm({ setUser }){
     }
 
     return(
-        <>
-        <h4>sign up</h4>
-        <form className="newuserform" onSubmit={handleSubmit}>
+        <div className="signup">
+        <h4>Join </h4>
+        <img className="glow" src="https://d2w9rnfcy7mm78.cloudfront.net/2749880/original_e4c48f1c535d4623a18e77d55df259e2.gif?1537578415?bc=1" alt="clear deep sea glow creature"/>
+        <form className="signupform" onSubmit={handleSubmit}>
             <label htmlFor="name">name </label>
             <input 
             type="text" 
@@ -52,9 +54,10 @@ function CreateUserForm({ setUser }){
             value={password}
             onChange={event => setPassword(event.target.value)}
             />
-            <input type="submit" value="create" />
+            <input className="submitbutton" type="submit" value="create" />
         </form>
-        </>
+        <Link to="/">already have an account ➺</Link>
+        </div>
     )
 }
 

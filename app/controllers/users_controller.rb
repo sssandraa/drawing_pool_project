@@ -25,6 +25,10 @@ class UsersController < ApplicationController
         end    
     end 
 
+    # def logout 
+
+    # end 
+
     def profile
         user = User.find_by(id: session[:user_id])
         if user 

@@ -47,11 +47,13 @@ function Dream ({ dream, user, setDreams, handleDelete}){
 return(
          <div className="dream-card">
                     <img src={dream.image} alt="dream"/>
+                    <div className="innercard">
                     <h4>{dream.date_time}</h4>
                     <p>{dream.description}</p>
+                    </div>
                     {/* <p>{note.text}</p> */}
                     {dream.notes.map((note) => <Note note={note} />)}
-                    <button onClick={() => handleDelete(dream.id)}>delete</button>
+                    {/* <button onClick={() => handleDelete(dream.id)}>delete</button> */}
                     {buttonClick ? 
                         <form onSubmit={handleSubmit}>
                         <input 

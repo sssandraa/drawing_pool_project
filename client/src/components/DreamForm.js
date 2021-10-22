@@ -39,6 +39,9 @@ function DreamForm({ addDream, user }){
     return(
         <>
         <Header/>
+        <div className="newdream">
+        <h4 className="newdreamheader">Add Dream</h4>
+        <img className="glow" src="https://d2w9rnfcy7mm78.cloudfront.net/1514645/original_fff75ba5fbf893b682284f8d52a158a8.png?1513544621?bc=1"/>
         <form className="dream-form" onSubmit={handleSubmit}>
         <label htmlFor="image">image </label>
         <input 
@@ -63,8 +66,9 @@ function DreamForm({ addDream, user }){
         value={description}
         onChange={event => setDescription(event.target.value)}
         />
-        <input type="submit" value="add dream"/>
+        <input className="submitbutton" type="submit" value="add"/>
         </form>
+        </div>
         </>
     )
 }

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useHistory } from "react-router";
+import { Link } from 'react-router-dom'
 
 function LandingPage ({ setUser }){
 
@@ -43,14 +44,15 @@ function LandingPage ({ setUser }){
       <br></br>
       <br></br>
       <h1> The Dream Pool </h1>
-      {/* <p>an ongoing archive and conversation of sleep dreams</p> */}
+      <p className="subtitle">a archive and conversation of sleep dreams</p>
       <br></br>
-      <img className="homeimage" src="https://web.archive.org/web/20090821174141/http://geocities.com/SoHo/Bistro/3064/aniwater.gif" alt="waterfall gif"/>
+      <img className="homeimage" src="https://d2w9rnfcy7mm78.cloudfront.net/2794474/original_9cf23c197ee7e597211bbfb577b09c6c.gif?1538327510?bc=1" alt="waterfall gif"/>
       <br>
       </br>
       <br>
       </br>
     {buttonClick ? 
+    <div>
     <form className="loginform" onSubmit={handleSubmit}>
     <label htmlFor="name">name </label>
     <input 
@@ -68,7 +70,10 @@ function LandingPage ({ setUser }){
         onChange={e => setPassword(e.target.value)}
     />
     <button type="submit">come in</button>
-    </form> :
+    </form> 
+    <Link to="/new-user">sign up ➺</Link>
+    </div>
+    :
     <button onClick={() => setButtonClick(true)}> Enter </button>}
       </div>
     )
